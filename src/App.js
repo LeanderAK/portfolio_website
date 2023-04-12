@@ -1,14 +1,96 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useEffect, useRef } from 'react';
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import FrameworkIcon from './components/framework_icon';
+import ProjectCard from './components/project_card';
+import Timeline from './components/timeline'
+import { Navbar, Button } from 'react-bootstrap';
 
 function App() {
+
   return (
     <div className="App">
-      <h1> Leander Kammermeier </h1>
+      <Navbar fixed="top">
+        <Row className='justify-content-between' style={{width: '100%'}}>
+          <Col className="text-left">
+            <button className='menu-button font-righteous mr-3'> CV </button>
+            <button className='menu-button font-righteous'> CV </button>
+            <button className='menu-button font-righteous ml-3'> CV </button>
+          </Col>
+          <Col  className="text-right">
+            <a href="https://github.com/LeanderAK" target='blank'> 
+              <img className="menu-icon mt-1" src="./icons/github_icon.png" hr/>
+            </a>
+            <a href="https://www.linkedin.com/in/leander-kammermeier-b0b844212/" target='blank'> 
+              <img className="menu-icon mt-1 ml-4" src="./icons/linkedin_icon.png" hr/>
+            </a>
 
 
-      
+          </Col>
+        </Row>
+        
+      </Navbar>
+      <Container fluid className='background-1'>
+        <Row>
+          <Col className='d-flex align-items-center'>
+            <div className='ml-auto' style={{ width: "45%" }}>
+              <span className='font-righteous-title verticaltext'>
+                LEANDER 
+              </span>
+              <span className='font-righteous-title verticaltext'>
+                KAMMERMEIER 
+              </span>
+            </div>
+          </Col>
+          <Col>
+            <div className='ml-auto' style={{ width: "95%" }}>
+              <model-viewer
+                src="./laura.glb" 
+                camera-controls 
+                shadow-intensity="0.2"
+                auto-rotate
+                exposure="1"
+                > 
+              </model-viewer>
+            </div>
+          </Col>
+        </Row>
+
+      </Container>
+      <Container fluid className="background-2 mt-5" style={{height:"100%"}}>  
+        <h1 className='pt-4'>Projects</h1>
+        <Row className='justify-content-center'>
+          <ProjectCard 
+            src="./images/desertImage.png"
+            title="Divae" 
+            subtitle="Bookclub App"
+            content="Card text blaa bla " 
+            modalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." />
+          <ProjectCard src="./icons/python_icon.png" title="Divae" cardContent="Python text blaa bla " modalContent="Python bla bla" />
+        </Row>
+        <Row className='justify-content-center mb-5'>
+          <FrameworkIcon name="Python" src="./icons/python_icon.png"/>
+          <FrameworkIcon name="Blender" src="./icons/blender_icon.png"/>
+          <FrameworkIcon name="Unity" src="./icons/unity_icon.png"/>
+          <FrameworkIcon name="Django" src="./icons/django_icon.png"/>
+          <FrameworkIcon name="Ionic" src="./icons/ionic_icon.png"/>
+          <FrameworkIcon name="Docker" src="./icons/docker_icon.png"/>
+          <FrameworkIcon name="React" src="./icons/react_icon.png"/>
+          <FrameworkIcon name="Bootstrap" src="./icons/bootstrap_icon.png"/>
+          <FrameworkIcon name="Elasticsearch" src="./icons/elasticsearch_icon.png"/>
+          <FrameworkIcon name="Sql" src="./icons/sql_icon.png"/>
+          <FrameworkIcon name="Html" src="./icons/html_icon.png"/>
+          <FrameworkIcon name="Css" src="./icons/css_icon.png"/>
+          <FrameworkIcon name="Javascript" src="./icons/js_icon.png"/>
+          <FrameworkIcon name="Firebase" src="./icons/firebase_icon.png"/>
+        </Row>
+        <Timeline />
+      </Container>
     </div>
+    
   );
 }
 

@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "RighteousRegular";
+  src: local("RighteousRegular"),
+    url("./fonts/Righteous/Righteous-Regular.ttf") format("truetype");
+  }
+
+@font-face {
+  font-family: "Baloo_2";
+  src: local("Baloo_2"),
+    url("./fonts/baloo_2/Baloo2-VariableFont_wght.ttf") format("truetype");
+  }
+
+@font-face {
+  font-family: "Oxanium-light";
+  src: local("Baloo_2"),
+    url("./fonts/Oxanium/Oxanium-Light.ttf") format("truetype");
+  }
+
+@font-face {
+  font-family: "Oxanium-medium";
+  src: local("Baloo_2"),
+    url("./fonts/Oxanium/Oxanium-Medium.ttf") format("truetype");
+  }

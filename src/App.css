@@ -2,37 +2,149 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+ .font-righteous-title {
+  font-family: "RighteousRegular";
+  font-size: 4rem;
+ }
+
+ .font-righteous {
+  font-family: "RighteousRegular";
+  font-size: 1rem;
+ }
+ .font-baloo-title {
+  font-family: "Baloo_2";
+  font-size: 2rem;
+ }
+
+ .font-baloo {
+  font-family: "Baloo_2";
+  font-size: 1rem;
+ }
+
+model-viewer {
+  height: 50rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.verticaltext{
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: -0.4em;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.background-1 {
+  position: relative;
+  background: linear-gradient(to bottom, #c0bfbf, #ffffff);
+}
+
+/*
+.background-1::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  left: -26%;
+  top: 100%;
+  z-index: 10;
+  display: block;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+  background-image: url('../public/wave_black.png');
+  background-size:700px 100%;
+  background-repeat: repeat;
+  background-position: 0 0;
+} 
+*/
+
+.background-2 {
+  position: relative;
+  background: linear-gradient(to bottom, #000000, #646464);
+}
+.menu-button {
+  background-color: #000;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.menu-button:hover {
+  background-color: #1d1d1d;
+}
+
+.menu-button:active {
+  background-color: #505050;
+}
+
+.framework-icon {
+  width: auto;
+  height: 90px;
+}
+
+.menu-icon {
+  width: auto;
+  height: 50px;
+}
+
+.framework-icon-name {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.project-card {
+  border-radius: 3%;
+  background-color: #646464;
+  padding: 1rem;
+  transition: all .2s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.project-card:hover {
+  transform: scale(1.1);
 }
+
+.project-card-image {
+  display: block;
+  max-height: 160px;
+  max-width: 286px;
+  width: auto;
+  height: auto;
+}
+
+.modal-content {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+}
+
+p {
+  color:white;
+  font-family: "Oxanium-light";
+}
+
+h1 {
+  color:white;
+  font-family: "Oxanium-medium";
+}
+
+h2 {
+  color:white;
+  font-family: "Oxanium-medium";
+}
+
+h5 {
+  color: white;
+  font-family: "Oxanium-medium";
+}
+
