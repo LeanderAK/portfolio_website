@@ -1,27 +1,34 @@
+/*
+#282828 dark grey
+#0C0032 Dark blue
+#190061 Slightly lighter blue
+#240090 lighter blue
+#3500D3 blue
+
+#c0bfbf light grey
+#ffffff white
+*/
+:root {
+  --dark-color1: #404040;
+  --dark-color2: #140b31;
+  --main-color3: #190061;
+  --main-color2: #240090;
+  --main-color1: #3500D3;
+  --light-color1: #ffffff;
+  --light-color2: #c0bfbf;
+}
 .App {
   text-align: center;
 }
-
-
-
- .font-righteous-title {
+.font-righteous-title {
   font-family: "RighteousRegular";
   font-size: 4rem;
- }
+}
 
- .font-righteous {
-  font-family: "RighteousRegular";
-  font-size: 1rem;
- }
- .font-baloo-title {
-  font-family: "Baloo_2";
-  font-size: 2rem;
- }
-
- .font-baloo {
-  font-family: "Baloo_2";
-  font-size: 1rem;
- }
+.font-righteous {
+font-family: "RighteousRegular";
+font-size: 1rem;
+}
 
 model-viewer {
   height: 50rem;
@@ -31,35 +38,20 @@ model-viewer {
   writing-mode: vertical-rl;
   text-orientation: upright;
   letter-spacing: -0.4em;
-
+  padding-bottom: 1rem;
+  background: linear-gradient(to bottom, var(--main-color2), var(--main-color3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .background-1 {
   position: relative;
-  background: linear-gradient(to bottom, #c0bfbf, #ffffff);
+  background: linear-gradient(to bottom, var(--light-color1), var(--light-color2));
 }
-
-/*
-.background-1::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  left: -26%;
-  top: 100%;
-  z-index: 10;
-  display: block;
-  height: 50px;
-  background-color: rgb(255, 255, 255);
-  background-image: url('../public/wave_black.png');
-  background-size:700px 100%;
-  background-repeat: repeat;
-  background-position: 0 0;
-} 
-*/
 
 .background-2 {
   position: relative;
-  background: linear-gradient(to bottom, #000000, #646464);
+  background: linear-gradient(to bottom right, var(--main-color3), var(--main-color1));
 }
 .menu-button {
   background-color: #000;
@@ -104,9 +96,10 @@ model-viewer {
 
 .project-card {
   border-radius: 3%;
-  background-color: #646464;
+  background: linear-gradient(to bottom, var(--dark-color2), var(--dark-color1));
   padding: 1rem;
   transition: all .2s ease-in-out;
+  height: 75%;
 }
 
 .project-card:hover {
@@ -115,10 +108,16 @@ model-viewer {
 
 .project-card-image {
   display: block;
-  max-height: 160px;
-  max-width: 286px;
+  max-height: 100%;
+  max-width: 100%;
   width: auto;
   height: auto;
+}
+
+.project-card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .modal-content {
@@ -147,4 +146,3 @@ h5 {
   color: white;
   font-family: "Oxanium-medium";
 }
-

@@ -16,12 +16,14 @@ function ProjectCard(props) {
                   <Card.Img className='project-card-image rounded mx-auto' variant="top" src={props.src}/>
             </div>
             <Card.Body>
-              <Card.Title> 
+              <Card.Title className="text-left"> 
+                <h5>{props.subtitle} </h5>
                 <h2>{props.title}</h2> 
               </Card.Title>
-              <Card.Text> 
-                <p>{props.subtitle} </p>
+              <Card.Text className="text-left"> 
+                <p className='project-card-text'>{props.content}</p>
               </Card.Text>
+              
             </Card.Body>
           </Card>
         </a>

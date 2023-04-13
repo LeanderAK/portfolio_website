@@ -41,7 +41,7 @@ function App() {
                 LEANDER 
               </span>
               <span className='font-righteous-title verticaltext'>
-                KAMMERMEIER 
+                KAMMERMEIER
               </span>
             </div>
           </Col>
@@ -60,7 +60,7 @@ function App() {
         </Row>
 
       </Container>
-      <Container fluid className="background-2 mt-5" style={{height:"100%"}}>  
+      <Container fluid className="background-2" style={{height:"100%"}}>  
         <h1 className='pt-4'>Projects</h1>
         <Row className='justify-content-center'>
           <ProjectCard 
@@ -68,8 +68,21 @@ function App() {
             title="Divae" 
             subtitle="Bookclub App"
             content="Card text blaa bla " 
-            modalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." />
-          <ProjectCard src="./icons/python_icon.png" title="Divae" cardContent="Python text blaa bla " modalContent="Python bla bla" />
+            modalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." 
+          />
+          <ProjectCard 
+            src="./images/desertImage.png"
+            title="Blubble" 
+            subtitle="Cross platform app"
+            content="
+              Blubble is a book club application that is designed to help book lovers structure and plan their 
+              discussions like never before. With Blubble, we have created an innovative tool that offers a wide 
+              range of features to make book club discussions more engaging, organized, and productive.
+              Blubble was created as a student project under the supervision of diva-e over the course of the 5th 
+              semester of my bachelor studies.
+            " 
+            modalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." 
+          />
         </Row>
         <Row className='justify-content-center mb-5'>
           <FrameworkIcon name="Python" src="./icons/python_icon.png"/>
