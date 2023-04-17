@@ -11,7 +11,7 @@ function ProjectCard(props) {
     return (
       <div>
         <a onClick={handleShow}>
-          <Card className='m-5 project-card' style= {{width: '20rem'}}>
+          <Card className='m-5 project-card' style= {{width: '25rem'}}>
             <div style={{height:'200px;'}}>
                   <Card.Img className='project-card-image rounded mx-auto' variant="top" src={props.src}/>
             </div>
@@ -41,6 +41,7 @@ function ProjectCard(props) {
               </Row>
               <Row>
                 <h1>{props.title}</h1>
+                <a href={props.contentLink} target='_blank'>Link</a>
               </Row>
               <Row>
                 <p>

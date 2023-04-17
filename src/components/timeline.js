@@ -13,7 +13,7 @@ function Timeline(props) {
             <Col>
                 EDUCATION
                 <Row className='justify-content-center'>
-                    <Card className='m-1 project-card' style= {{width: '50rem'}}>
+                    <Card className='m-1 timeline-card' style= {{width: '50rem'}}>
                         <Card.Body>
                             <Card.Title className="text-left"> 
                                 <h5>University of Applied Sciences - HTW BERLIN</h5>
@@ -26,7 +26,7 @@ function Timeline(props) {
                     </Card>
                 </Row>
                 <Row className='justify-content-center'>
-                    <Card className='m-1 project-card' style= {{width: '50rem'}}>
+                    <Card className='m-1 timeline-card' style= {{width: '50rem'}}>
                         <Card.Body>
                         <Card.Title className="text-left"> 
                             <h5>Freie Schule Anne Sophie Berlin - Bilingual High School (German/English)  </h5>
@@ -41,7 +41,7 @@ function Timeline(props) {
                 </Row>
                 WORK EXPERIENCE AND INTERNSHIPS
                 <Row className='justify-content-center'>
-                    <Card className='m-1 project-card' style= {{width: '50rem'}}>
+                    <Card className='m-1 timeline-card' style= {{width: '50rem'}}>
                     <Card.Body>
                             <Card.Title className="text-left"> 
                                 <h5>[j]karef Gmbh - Internship & Working student</h5>
@@ -54,7 +54,7 @@ function Timeline(props) {
                     </Card>
                 </Row>
                 <Row className='justify-content-center'>
-                    <Card className='m-1 project-card' style= {{width: '50rem'}}>
+                    <Card className='m-1 timeline-card' style= {{width: '50rem'}}>
                     <Card.Body>
                             <Card.Title className="text-left"> 
                                 <h5>Designation - Freelance work</h5>
@@ -67,7 +67,7 @@ function Timeline(props) {
                     </Card>
                 </Row>
                 <Row className='justify-content-center'>
-                    <Card className='m-1 project-card' style= {{width: '50rem'}}>
+                    <Card className='m-1 timeline-card' style= {{width: '50rem'}}>
                     <Card.Body>
                             <Card.Title className="text-left"> 
                                 <h5>Mobile Learning Labs GmbH - Internship</h5>

@@ -1,0 +1,25 @@
+.timeline-card {
+    border-radius: 3%;
+    background: linear-gradient(to bottom, var(--dark-color2), var(--dark-color1));
+    padding: 1rem;
+    transition: all .2s ease-in-out;
+    height: 75%;
+}
+
+.timeline-card:hover {
+    transform: scale(1.1);
+}
+
+.timeline-card-image {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+.timeline-card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

@@ -85,7 +85,7 @@ function App() {
             modalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." 
           />
           <ProjectCard 
-            src="./images/desertImage.png"
+            src="./images/blubble.png"
             title="Blubble" 
             subtitle="Cross platform app"
             content="
@@ -95,8 +95,8 @@ function App() {
               Blubble was created as a student project under the supervision of diva-e over the course of the 5th 
               semester of my bachelor studies.
             " 
-            modalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." 
-          />
+            contentLink="https://showtime.f4.htw-berlin.de/ws22/bachelor/b6-book-reading-club-applikation/"
+            />
           <ProjectCard 
             src="./images/desertImage.png"
             title="Exhebition Render" 
