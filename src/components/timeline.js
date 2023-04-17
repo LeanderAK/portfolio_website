@@ -9,40 +9,79 @@ function Timeline(props) {
     const handleShow = () => setShowModal(true);
 
     return (
-      <div className='container py-2 mt-4 mb-4'>
-        <div className='row no-gutters'>
-            <div className='col-sm'> </div>
-            <div className='col-sm-1 text-center flex-column d-none d-sm-flex'>
-                <div className='row h-50'>
-                    <div className='col'> &nbsp;</div>
-                    <div className='col'> &nbsp;</div>        
-                </div>
-            </div>     
-        </div>
-        <div className='col-sm py-2'>
-            <div className='card'>
-                <div className='card-body'>
-                    <div className='float-right text-muted small'> ASIDASDIUASDZ</div>
-                    <h4 className='card-title'> Day 1</h4>
-                    <p className='p-text'> welcomajiuhzsdafszd</p>
-                </div>
-            </div>
-        </div>
-        <div className='col-sm-1 text-center flex-column d-none d-sm-flex'>
-            <div className='row h-50'>
-                <div className='col border-right'> &nbsp; </div>
-                <div className='col'> &nbsp;</div>
-            </div>
-            <h5 className='m-2'>
-                <span className='badge badge-pill bg-light border'>&nbsp;</span>
-            </h5>
-            <div className='row h-50'>
-                <div className='col border-right'> &nbsp; </div>
-                <div className='col'> &nbsp;</div>
-            </div>
-        </div>
+        <div>
+            <Col>
+                EDUCATION
+                <Row className='justify-content-center'>
+                    <Card className='m-1 project-card' style= {{width: '50rem'}}>
+                        <Card.Body>
+                            <Card.Title className="text-left"> 
+                                <h5>University of Applied Sciences - HTW BERLIN</h5>
+                                <h2>Oktober 2020 - Present</h2> 
+                            </Card.Title>
+                            <Card.Text className="text-left"> 
+                                <p className=''>B.Sc in International Media Informatics with Focus on media applications of computer science, including Web,3D, image processing, computer graphics and software engineering</p>
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Row>
+                <Row className='justify-content-center'>
+                    <Card className='m-1 project-card' style= {{width: '50rem'}}>
+                        <Card.Body>
+                        <Card.Title className="text-left"> 
+                            <h5>Freie Schule Anne Sophie Berlin - Bilingual High School (German/English)  </h5>
+                            <h2>June 2011 to June 2019</h2> 
+                        </Card.Title>
+                        <Card.Text className="text-left"> 
+                            <p className=''>Abitur (University entrance diploma) with an average grade of 1.9 </p>
+                        </Card.Text>
+                        
+                        </Card.Body>
+                    </Card>
+                </Row>
+                WORK EXPERIENCE AND INTERNSHIPS
+                <Row className='justify-content-center'>
+                    <Card className='m-1 project-card' style= {{width: '50rem'}}>
+                    <Card.Body>
+                            <Card.Title className="text-left"> 
+                                <h5>[j]karef Gmbh - Internship & Working student</h5>
+                                <h2>April 2022 - Present</h2> 
+                            </Card.Title>
+                            <Card.Text className="text-left"> 
+                                <p className=''>B.Sc in International Media Informatics with Focus on media applications of computer science, including Web,3D, image processing, computer graphics and software engineering</p>
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Row>
+                <Row className='justify-content-center'>
+                    <Card className='m-1 project-card' style= {{width: '50rem'}}>
+                    <Card.Body>
+                            <Card.Title className="text-left"> 
+                                <h5>Designation - Freelance work</h5>
+                                <h2>March 2021 - March 2022</h2> 
+                            </Card.Title>
+                            <Card.Text className="text-left"> 
+                                <p className=''>Part-time work for Kjubex Project ‘House Boat’ including 3D Modelling and rendering, Setting up VR applications for visualisation in Unity and Product research for interior products and solutions. </p>
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Row>
+                <Row className='justify-content-center'>
+                    <Card className='m-1 project-card' style= {{width: '50rem'}}>
+                    <Card.Body>
+                            <Card.Title className="text-left"> 
+                                <h5>Mobile Learning Labs GmbH - Internship</h5>
+                                <h2>January 2015</h2> 
+                            </Card.Title>
+                            <Card.Text className="text-left"> 
+                                <p className=''>Student internship including translating app content from german to english, testing of learning application prototype and gaining insight into development of mobile application</p>
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Row>
+            </Col>
 
-      </div>
+        </div>
       );
   }
 
