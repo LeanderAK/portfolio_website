@@ -1,21 +1,13 @@
-/*
-#282828 dark grey
-#0C0032 Dark blue
-#190061 Slightly lighter blue
-#240090 lighter blue
-#3500D3 blue
 
-#c0bfbf light grey
-#ffffff white
-*/
 :root {
   --dark-color1: #404040;
-  --dark-color2: #140b31;
+  --dark-color2: #26242e;
   --main-color3: #2a253a;
   --main-color2: #553d9b;
-  --main-color1: #a087eb;
-  --light-color1: #ffffff;
-  --light-color2: #c0bfbf;
+  --main-color1: #0f0f0f;
+  --light-color1: #bebebe;
+  --light-color2: #686868;
+  --accent-color: #ffcd2a;
 }
 .App {
   text-align: center;
@@ -30,21 +22,26 @@ font-family: "RighteousRegular";
 font-size: 1rem;
 }
 
+.font-righteous-subtitle {
+  font-family: "RighteousRegular";
+  font-size: 3.6rem;
+  margin-top: 1rem;
+  }
+
 model-viewer {
   height: 100vh;
 }
 
 .verticaltext{
-  height: 100vh;
   writing-mode: vertical-rl;
   text-orientation: upright;
   letter-spacing: -0.4em;
   padding-bottom: 1rem;
-  background: linear-gradient(to bottom, var(--main-color2), var(--main-color3));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
-
+.titletext {
+  height: 100vh;
+  color: var(--accent-color);
+}
 .background-1 {
   position: relative;
   height: 100vh;
@@ -55,13 +52,19 @@ model-viewer {
   position: relative;
   background: linear-gradient(to bottom right, var(--main-color3), var(--main-color1));
 }
+.background-1 {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(to bottom, var(--light-color1), var(--light-color2));
+}
 .menu-button {
   background-color: #000;
   border: 1px solid #000;
   border-radius: 4px;
   box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
   box-sizing: border-box;
-  color: #fff;
+  color:var(--accent-color);
+  font-family: "RighteousRegular";
   cursor: pointer;
   display: inline-block;
   font-size: 14px;
@@ -102,12 +105,21 @@ p {
 }
 
 h1 {
-  color:white;
-  font-family: "Oxanium-medium";
+  color: var(--accent-color);
+  font-family: "RighteousRegular";
 }
 
 h2 {
-  color:white;
+  color:var(--accent-color);
+  font-family: "Oxanium-medium";
+}
+
+h3 {
+  color: white;
+  font-family: "Oxanium-medium";
+}
+h4 {
+  color: var(--accent-color);
   font-family: "Oxanium-medium";
 }
 

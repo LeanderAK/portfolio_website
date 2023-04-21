@@ -11,7 +11,7 @@ function ProjectCard(props) {
     return (
       <div>
         <a onClick={handleShow}>
-          <Card className='m-5 project-card' style= {{width: '25rem'}}>
+          <Card className='m-3 project-card col-auto' style= {{width: '25rem'}}>
             <div style={{height:'200px;'}}>
                   <Card.Img className='project-card-image rounded mx-auto' variant="top" src={props.src}/>
             </div>
@@ -40,7 +40,7 @@ function ProjectCard(props) {
                 <h5>{props.subtitle}</h5>
               </Row>
               <Row>
-                <h1>{props.title}</h1>
+                <h2>{props.title}</h2>
                 <a href={props.contentLink} target='_blank'>Link</a>
               </Row>
               <Row>
