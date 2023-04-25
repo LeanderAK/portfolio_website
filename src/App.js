@@ -1,7 +1,7 @@
 import './css/App.css';
 import './css/timeline.css'
 import './css/project_card.css'
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -26,8 +26,42 @@ function App() {
     resumeRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
+  const [colors, setColors] = useState([]);
+
+  function getRandomColor() {
+    var r = Math.floor(Math.random() * 96) + 160; // limit red to 160-255
+    var g = Math.floor(Math.random() * 96) + 160; // limit green to 160-255
+    var b = Math.floor(Math.random() * 96) + 160; // limit blue to 160-255
+    return (r + "," + g + "," + b)
+  }
+
+  useEffect(() => {
+    var color = getRandomColor()
+    console.log(color)
+    var url = 'https://www.thecolorapi.com/scheme?rgb='+ color +'&mode=analogic-complement&count=8&format=json'
+    console.log(url)
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        const hexArray = data.colors.map(obj => obj.hex.value);
+        setColors(hexArray)
+        console.log(hexArray)
+      })
+      .catch(error => console.error(error));
+      console.log(colors)
+  }, []);
+
   return (
-    <div className="App">
+    <div className="App" style={{ 
+      // '--dark-color1' : colors[0],
+      // '--dark-color2' : colors[1],
+      '--main-color3' : colors[0],
+      '--main-color2' : colors[1],
+      '--main-color1' : colors[2],
+      '--light-color1' : colors[3],
+      '--light-color2' : colors[5],
+      '--accent-color' : colors[7],
+    }}>
       <Navbar fixed="top">
         <Row className='justify-content-between' style={{width: '100%'}}>
           <Col className="text-left">
