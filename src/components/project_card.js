@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
-import { Card, Button, Modal, Row, Col, Container } from 'react-bootstrap';
-
+import { Card, Button, Modal, Row, Col, Container,  } from 'react-bootstrap';
+import { ArrowUpRightSquare, Link } from 'react-bootstrap-icons';
 
 function ProjectCard(props) {
     const [showModal, setShowModal] = useState(false);
@@ -41,7 +41,8 @@ function ProjectCard(props) {
               </Row>
               <Row>
                 <h2>{props.title}</h2>
-                <a href={props.contentLink} target='_blank'>Link</a>
+                
+                <a href={props.contentLink} className='ml-3' target='_blank'><ArrowUpRightSquare color="white" size={32}/></a>
               </Row>
               <Row>
                 <p>

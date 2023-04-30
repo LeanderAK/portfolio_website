@@ -1,6 +1,7 @@
 import './css/App.css';
 import './css/timeline.css'
 import './css/project_card.css'
+
 import React, { useState, useEffect, useRef } from 'react';
 
 import Container from 'react-bootstrap/Container';
@@ -10,6 +11,7 @@ import FrameworkIcon from './components/framework_icon';
 import ProjectCard from './components/project_card';
 import Timeline from './components/timeline'
 import { Navbar, Button } from 'react-bootstrap';
+import { Github, Linkedin } from 'react-bootstrap-icons';
 
 function App() {
   const frameworksRef = useRef(null);
@@ -26,62 +28,26 @@ function App() {
     resumeRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  const [colors, setColors] = useState([]);
-
-  function getRandomColor() {
-    var r = Math.floor(Math.random() * 96) + 160; // limit red to 160-255
-    var g = Math.floor(Math.random() * 96) + 160; // limit green to 160-255
-    var b = Math.floor(Math.random() * 96) + 160; // limit blue to 160-255
-    return (r + "," + g + "," + b)
-  }
-
-  useEffect(() => {
-    var color = getRandomColor()
-    console.log(color)
-    var url = 'https://www.thecolorapi.com/scheme?rgb='+ color +'&mode=analogic-complement&count=8&format=json'
-    console.log(url)
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        const hexArray = data.colors.map(obj => obj.hex.value);
-        setColors(hexArray)
-        console.log(hexArray)
-      })
-      .catch(error => console.error(error));
-      console.log(colors)
-  }, []);
-
   return (
-    <div className="App" style={{ 
-      // '--dark-color1' : colors[0],
-      // '--dark-color2' : colors[1],
-      '--main-color3' : colors[0],
-      '--main-color2' : colors[1],
-      '--main-color1' : colors[2],
-      '--light-color1' : colors[3],
-      '--light-color2' : colors[5],
-      '--accent-color' : colors[7],
-    }}>
-      <Navbar fixed="top">
+    <div className="App" data-spy="scroll" data-target="#navbar">
+      <Navbar fixed="top" id='navbar'>
         <Row className='justify-content-between' style={{width: '100%'}}>
           <Col className="text-left">
-            <button className='menu-button font-righteous mr-3' onClick={handleFrameworksRef}> FRAMEWORKS </button>
-            <button className='menu-button font-righteous' onClick={handleProjectRef}> PROJECTS </button>
-            <button className='menu-button font-righteous ml-3' onClick={handleResumeRef}> CV </button>
+            <a className='menu-button mr-3' onClick={handleProjectRef}> <span className='menu-button'>PROJECTS</span> </a>
+            <a className='menu-button ' onClick={handleResumeRef}> <span className='menu-button'>CV</span> </a>
+            <a className='menu-button ml-3' onClick={handleFrameworksRef}> <span className='menu-button'>FRAMEWORKS</span> </a>
           </Col>
           <Col  className="text-right">
             <a href="https://github.com/LeanderAK" target='blank'> 
-              <img className="menu-icon mt-1" src="./icons/github_icon.png" hr/>
+              <Github className="mt-1 ml-4" color="white" size={50}/>
             </a>
             <a href="https://www.linkedin.com/in/leander-kammermeier-b0b844212/" target='blank'> 
-              <img className="menu-icon mt-1 ml-4" src="./icons/linkedin_icon.png" hr/>
+              <Linkedin className="mt-1 ml-4" color="white" size={50}/>
             </a>
-
-
           </Col>
         </Row>
       </Navbar>
-      <Container fluid className='background-1'>
+      <Container fluid className='background-1' id="container1">
         <Row>
           <Col className='d-flex align-items-center'>
             <div className='ml-auto' style={{ width: "45%" }}>
