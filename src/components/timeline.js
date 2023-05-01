@@ -12,7 +12,7 @@ function Timeline(props) {
         <div>
             <Col>
                 <div className="justify-content-center"> 
-                    <div className="timeline-item">
+                    <div className="timeline-item" data-aos="fade-up">
                         <h4>Oktober 2020 - Present</h4> 
                         <h3>University of Applied Sciences - HTW BERLIN</h3>
                         <p className=''>
@@ -29,7 +29,7 @@ function Timeline(props) {
                             <p className=''>Part-time work for Kjubex Project ‘House Boat’ including 3D Modelling and rendering, Setting up VR applications for visualisation in Unity and Product research for interior products and solutions. </p>
                         </div>
                     </div>
-                    <div className="timeline-item">
+                    <div className="timeline-item" data-aos="fade-up">
                         <h4>Freie Schule Anne Sophie Berlin - Bilingual High School (German/English)  </h4>
                         <h3>June 2011 to June 2019</h3> 
                         <p className=''>Abitur (University entrance diploma) with an average grade of 1.9 </p>

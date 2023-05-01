@@ -3,7 +3,8 @@ import './css/timeline.css'
 import './css/project_card.css'
 
 import React, { useState, useEffect, useRef } from 'react';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -15,8 +16,8 @@ import { Github, Linkedin } from 'react-bootstrap-icons';
 
 function App() {
   const frameworksRef = useRef(null);
-  const projectRef = useRef(null)
-  const resumeRef = useRef(null)
+  const projectRef = useRef(null);
+  const resumeRef = useRef(null);
 
   const handleFrameworksRef = () => {
     frameworksRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -27,22 +28,46 @@ function App() {
   const handleResumeRef = () => {
     resumeRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
+  const [navbarColor, setNavbarColor] = useState("#000000");
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY; // => scroll position
+    console.log(scrollPosition, window.innerHeight);
+    if(scrollPosition > 0.9 * window.innerHeight)  {
+      setNavbarColor("#ffffff")
+    } else {
+      setNavbarColor("#000000")
+    }
+    console.log(navbarColor)
+  }
+  useEffect(() => {
+    AOS.init();
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <div className="App" data-spy="scroll" data-target="#navbar">
+    
+    <div className="App" data-spy="scroll" data-target="#navbar" style={{"--navbar-color" : navbarColor}}>
+      <script>
+        AOS.init();
+      </script>
       <Navbar fixed="top" id='navbar'>
         <Row className='justify-content-between' style={{width: '100%'}}>
           <Col className="text-left">
-            <a className='menu-button mr-3' onClick={handleProjectRef}> <span className='menu-button'>PROJECTS</span> </a>
-            <a className='menu-button ' onClick={handleResumeRef}> <span className='menu-button'>CV</span> </a>
-            <a className='menu-button ml-3' onClick={handleFrameworksRef}> <span className='menu-button'>FRAMEWORKS</span> </a>
+            <a className='menu-button mr-3' onClick={handleProjectRef}> <span className='menu-button navbar-color'>PROJECTS</span> </a>
+            <a className='menu-button ' onClick={handleResumeRef}> <span className='menu-button navbar-color'>CV</span> </a>
+            <a className='menu-button ml-3' onClick={handleFrameworksRef}> <span className='menu-button navbar-color'>FRAMEWORKS</span> </a>
           </Col>
           <Col  className="text-right">
             <a href="https://github.com/LeanderAK" target='blank'> 
-              <Github className="mt-1 ml-4" color="white" size={50}/>
+              <Github className="mt-1 ml-4 navbar-color" size={50}/>
             </a>
             <a href="https://www.linkedin.com/in/leander-kammermeier-b0b844212/" target='blank'> 
-              <Linkedin className="mt-1 ml-4" color="white" size={50}/>
+              <Linkedin className="mt-1 ml-4 navbar-color"  size={50}/>
             </a>
           </Col>
         </Row>
@@ -77,60 +102,68 @@ function App() {
         <Row className='pt-5'>       
           <div className='col-11'>
             <Row className='justify-content-center '>
-              <ProjectCard 
-                src="./images/desertImage.png"
-                title="Divae" 
-                subtitle="Bookclub App"
-                content="Card text blaa bla " 
-                modalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." 
-              />
-              <ProjectCard 
-                src="./images/blubble.png"
-                title="Blubble" 
-                subtitle="Cross platform app"
-                content="
-                  Blubble is a book club application that is designed to help book lovers structure and plan their 
-                  discussions like never before. With Blubble, we have created an innovative tool that offers a wide 
-                  range of features to make book club discussions more engaging, organized, and productive.
-                  Blubble was created as a student project under the supervision of diva-e over the course of the 5th 
-                  semester of my bachelor studies.
-                " 
-                contentLink="https://showtime.f4.htw-berlin.de/ws22/bachelor/b6-book-reading-club-applikation/"
+              <div data-aos="fade-up" data-aos-delay="0">
+                <ProjectCard 
+                  src="./images/desertImage.png"
+                  title="Divae" 
+                  subtitle="Bookclub App"
+                  content="Card text blaa bla " 
+                  modalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." 
                 />
-              <ProjectCard 
-                src="./images/desertImage.png"
-                title="Exhebition Render" 
-                subtitle="Blender rendering Practice"
-                content="
-                  Blubble is a book club application that is designed to help book lovers structure and plan their 
-                  discussions like never before. With Blubble, we have created an innovative tool that offers a wide 
-                  range of features to make book club discussions more engaging, organized, and productive.
-                  Blubble was created as a student project under the supervision of diva-e over the course of the 5th 
-                  semester of my bachelor studies.
-                " 
-                modalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." 
-              />
-              <ProjectCard 
-                src="./images/desertImage.png"
-                title="Simple Shrine Pack" 
-                subtitle="Unity Asset store pack"
-                content="
-                  Blubble is a book club application that is designed to help book lovers structure and plan their 
-                  discussions like never before. With Blubble, we have created an innovative tool that offers a wide 
-                  range of features to make book club discussions more engaging, organized, and productive.
-                  Blubble was created as a student project under the supervision of diva-e over the course of the 5th 
-                  semester of my bachelor studies.
-                " 
-                modalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." 
-              />
+              </div>
+              <div data-aos="fade-up" data-aos-delay="100">
+                <ProjectCard 
+                  src="./images/blubble.png"
+                  title="Blubble" 
+                  subtitle="Cross platform app"
+                  content="
+                    Blubble is a book club application that is designed to help book lovers structure and plan their 
+                    discussions like never before. With Blubble, we have created an innovative tool that offers a wide 
+                    range of features to make book club discussions more engaging, organized, and productive.
+                    Blubble was created as a student project under the supervision of diva-e over the course of the 5th 
+                    semester of my bachelor studies.
+                  " 
+                  contentLink="https://showtime.f4.htw-berlin.de/ws22/bachelor/b6-book-reading-club-applikation/"
+                  />
+              </div>
+              <div data-aos="fade-up" data-aos-delay="200">
+                <ProjectCard 
+                  src="./images/desertImage.png"
+                  title="Exhebition Render" 
+                  subtitle="Blender rendering Practice"
+                  content="
+                    Blubble is a book club application that is designed to help book lovers structure and plan their 
+                    discussions like never before. With Blubble, we have created an innovative tool that offers a wide 
+                    range of features to make book club discussions more engaging, organized, and productive.
+                    Blubble was created as a student project under the supervision of diva-e over the course of the 5th 
+                    semester of my bachelor studies.
+                  " 
+                  modalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." 
+                />
+              </div>
+              <div data-aos="fade-up" data-aos-delay="300">
+                <ProjectCard 
+                  src="./images/desertImage.png"
+                  title="Simple Shrine Pack" 
+                  subtitle="Unity Asset store pack"
+                  content="
+                    Blubble is a book club application that is designed to help book lovers structure and plan their 
+                    discussions like never before. With Blubble, we have created an innovative tool that offers a wide 
+                    range of features to make book club discussions more engaging, organized, and productive.
+                    Blubble was created as a student project under the supervision of diva-e over the course of the 5th 
+                    semester of my bachelor studies.
+                  " 
+                  modalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." 
+                />
+              </div>
             </Row>
           </div>
-          <div className='col-1'>
-            <h1 className='font-righteous-subtitle verticaltext' ref={projectRef}>PROJECTS</h1>
+          <div className='col-1 col-md-auto'>
+            <span className='font-righteous-subtitle verticaltext' ref={projectRef}>PROJECTS</span>
           </div>
         </Row>
         <Row className='pt-5'>
-          <div className='col-1'>
+          <div className='col-1 vertical-overflow'>
             <h1 className='font-righteous-subtitle verticaltext' ref={resumeRef}>RESUME</h1>
           </div>
           <div className='col-11'>
@@ -138,34 +171,34 @@ function App() {
           </div>
 
         </Row>
-        <Row>
+        <Row className='pt-5'>
           <div className='col-11'>
               <Col>
-                <Row className='justify-content-center'>
+                <Row className='justify-content-center' data-aos="fade-up">
                   <FrameworkIcon name="Python" src="./icons/python_icon.png"/>
                   <FrameworkIcon name="React" src="./icons/react_icon.png"/>
                   <FrameworkIcon name="Html" src="./icons/html_icon.png"/>
                   <FrameworkIcon name="Css" src="./icons/css_icon.png"/>
                   <FrameworkIcon name="Javascript" src="./icons/js_icon.png"/>
                 </Row>
-                <Row className='justify-content-center'>
+                <Row className='justify-content-center' data-aos="fade-up">
                   <FrameworkIcon name="Sql" src="./icons/sql_icon.png"/>
                   <FrameworkIcon name="Django" src="./icons/django_icon.png"/>
                   <FrameworkIcon name="Docker" src="./icons/docker_icon.png"/>
                   <FrameworkIcon name="Elasticsearch" src="./icons/elasticsearch_icon.png"/>
                 </Row>
-                <Row className='justify-content-center'> 
+                <Row className='justify-content-center' data-aos="fade-up"> 
                   <FrameworkIcon name="Ionic" src="./icons/ionic_icon.png"/>
                   <FrameworkIcon name="Bootstrap" src="./icons/bootstrap_icon.png"/>
                   <FrameworkIcon name="Firebase" src="./icons/firebase_icon.png"/>
                 </Row>
-                <Row className='justify-content-center'>
+                <Row className='justify-content-center' data-aos="fade-up">
                   <FrameworkIcon name="Blender" src="./icons/blender_icon.png"/>
                   <FrameworkIcon name="Unity" src="./icons/unity_icon.png"/>
                 </Row>
               </Col>
           </div>
-          <div className='col-1'>
+          <div className='col-1 vertical-overflow'>
             <h1 className='font-righteous-subtitle verticaltext' ref={frameworksRef}>FRAMEWORKS</h1>
           </div>
         </Row>

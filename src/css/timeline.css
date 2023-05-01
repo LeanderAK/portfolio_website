@@ -6,6 +6,7 @@
     padding: 1rem;
     border-radius: 1rem;
     margin-bottom: 1rem;
+    box-shadow: inset 0px 0px 20px rgba(167, 153, 107, 0.4);
 }
 .timeline-secondary-item {
     margin-left: 15%;

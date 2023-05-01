@@ -11,17 +11,17 @@ function ProjectCard(props) {
     return (
       <div>
         <a onClick={handleShow}>
-          <Card className='m-3 project-card col-auto' style= {{width: '25rem'}}>
+          <Card className='m-3 project-card col-auto' >
             <div style={{height:'200px;'}}>
                   <Card.Img className='project-card-image rounded mx-auto' variant="top" src={props.src}/>
             </div>
-            <Card.Body>
+            <Card.Body className='project-card-body'>
               <Card.Title className="text-left"> 
                 <h5>{props.subtitle} </h5>
                 <h2>{props.title}</h2> 
               </Card.Title>
               <Card.Text className="text-left"> 
-                <p className='project-card-text'>{props.content}</p>
+                <p className=''>{props.content}</p>
               </Card.Text>
               
             </Card.Body>
