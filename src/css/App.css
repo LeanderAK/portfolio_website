@@ -36,7 +36,6 @@ font-size: 1rem;
 model-viewer {
   height: 100vh;
 }
-
 .verticaltext{
   writing-mode: vertical-rl;
   text-orientation: upright;

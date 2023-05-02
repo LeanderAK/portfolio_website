@@ -99,6 +99,10 @@ function App() {
         </Row>
       </Container>
       <Container fluid className="background-2" style={{height:"100%"}}>
+        <div >
+          <h1 className='mt-5' data-aos="fade-up" data-aos-delay="0"> HELLO ASDASD</h1>
+          <p className='pl-5 pr-5' data-aos="fade-up" data-aos-delay="0"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
         <Row className='pt-5'>       
           <div className='col-11'>
             <Row className='justify-content-center '>
@@ -174,32 +178,38 @@ function App() {
         <Row className='pt-5'>
           <div className='col-11'>
               <Col>
-                <Row className='justify-content-center' data-aos="fade-up">
-                  <FrameworkIcon name="Python" src="./icons/python_icon.png"/>
-                  <FrameworkIcon name="React" src="./icons/react_icon.png"/>
-                  <FrameworkIcon name="Html" src="./icons/html_icon.png"/>
-                  <FrameworkIcon name="Css" src="./icons/css_icon.png"/>
-                  <FrameworkIcon name="Javascript" src="./icons/js_icon.png"/>
+                <Row className='justify-content-center'> 
+                  <span className='verticaltext mt-3' style={{fontSize: "20px"}} data-aos="fade-up"> FRONTEND</span>
+                  <FrameworkIcon name="React" src="./icons/react_icon.png" popup_delay="0"/>
+                  <FrameworkIcon name="Html" src="./icons/html_icon.png" popup_delay="50"/>
+                  <FrameworkIcon name="Css" src="./icons/css_icon.png" popup_delay="100"/>
+                  <FrameworkIcon name="Ionic" src="./icons/ionic_icon.png" popup_delay="150"/>
+                  <FrameworkIcon name="Bootstrap" src="./icons/bootstrap_icon.png" popup_delay="200"/>
+                  <FrameworkIcon name="Firebase" src="./icons/firebase_icon.png" popup_delay="250"/>
                 </Row>
-                <Row className='justify-content-center' data-aos="fade-up">
-                  <FrameworkIcon name="Sql" src="./icons/sql_icon.png"/>
-                  <FrameworkIcon name="Django" src="./icons/django_icon.png"/>
-                  <FrameworkIcon name="Docker" src="./icons/docker_icon.png"/>
-                  <FrameworkIcon name="Elasticsearch" src="./icons/elasticsearch_icon.png"/>
+                <Row className='justify-content-center'>
+                  <span className='verticaltext mt-3' style={{fontSize: "20px"}} data-aos="fade-up"> BACKEND</span>
+                  <FrameworkIcon name="Express JSSql" src="./icons/express_icon.png" popup_delay="0"/>
+                  <FrameworkIcon name="Sql" src="./icons/sql_icon.png" popup_delay="50"/>
+                  <FrameworkIcon name="Django" src="./icons/django_icon.png" popup_delay="100"/>
+                  <FrameworkIcon name="Docker" src="./icons/docker_icon.png" popup_delay="150"/>
+                  <FrameworkIcon name="Elasticsearch" src="./icons/elasticsearch_icon.png" popup_delay="200"/>
                 </Row>
-                <Row className='justify-content-center' data-aos="fade-up"> 
-                  <FrameworkIcon name="Ionic" src="./icons/ionic_icon.png"/>
-                  <FrameworkIcon name="Bootstrap" src="./icons/bootstrap_icon.png"/>
-                  <FrameworkIcon name="Firebase" src="./icons/firebase_icon.png"/>
+                <Row className='justify-content-center '>
+                  <span className='verticaltext mt-3' style={{fontSize: "20px"}} data-aos="fade-up"> LANGUAGES</span>
+                  <FrameworkIcon name="Python" src="./icons/python_icon.png" popup_delay="0"/>
+                  <FrameworkIcon name="Java" src="./icons/java_icon.png" popup_delay="50"/>
+                  <FrameworkIcon name="Javascript" src="./icons/js_icon.png" popup_delay="100"/>
                 </Row>
-                <Row className='justify-content-center' data-aos="fade-up">
-                  <FrameworkIcon name="Blender" src="./icons/blender_icon.png"/>
-                  <FrameworkIcon name="Unity" src="./icons/unity_icon.png"/>
+                <Row className='justify-content-center'>
+                  <span className='verticaltext mt-3' style={{fontSize: "20px"}} data-aos="fade-up"> SOFTWARE</span>
+                  <FrameworkIcon name="Blender" src="./icons/blender_icon.png" popup_delay="0"/>
+                  <FrameworkIcon name="Unity" src="./icons/unity_icon.png" popup_delay="50"/>
                 </Row>
               </Col>
           </div>
           <div className='col-1 vertical-overflow'>
-            <h1 className='font-righteous-subtitle verticaltext' ref={frameworksRef}>FRAMEWORKS</h1>
+            <h1 className='font-righteous-subtitle verticaltext' ref={frameworksRef}>PROFICIENCIES</h1>
           </div>
         </Row>
       </Container>
