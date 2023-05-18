@@ -1,21 +1,18 @@
 
 :root {
-  --dark-color1: #404040;
-  --dark-color2: #26242e;
-  --main-color3: #2a253a;
-  --main-color2: #553d9b;
-  --main-color1: #0f0f0f;
-  --light-color1: #bebebe;
-  --light-color2: #686868;
-  --accent-color: #ffcd2a;
+  --card-color: #797979;
+
+  --content-background-left: #979797;
+  --content-background-right: #8575B1;
+
+  --top-color: #c5c5c5;
+  
+  --accent-color: rgb(255, 255, 255);
   --navbar-color: #000000;
 }
 body {
   max-width: 100%;
-  overflow-x: hidden;
-}
-.App {
-  text-align: center;
+  overflow: overlay;
 }
 .font-righteous-title {
   font-family: "RighteousRegular";
@@ -47,25 +44,31 @@ model-viewer {
 .titletext {
   height: 100vh;
   color: white;
+  text-align: center;
 }
 .background-1 {
   position: relative;
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(to bottom, var(--light-color1), var(--light-color2));
+  background: var(--top-color);
 }
 
 .background-2 {
   overflow: hidden;
   width: 100vw;
   position: relative;
-  background: linear-gradient(to bottom right, var(--main-color3), var(--main-color1));
 }
 .background-3 {
   width: 100vw;
   position: relative;
   height: 100vh;
-  background: linear-gradient(to bottom, var(--light-color1), var(--light-color2));
+  background: var(--top-color);
+}
+.background-color-left {
+  background: var(--content-background-left)
+}
+.background-color-right {
+  background: var(--content-background-right)
 }
 .content-container {
   display: flex;
@@ -82,20 +85,33 @@ model-viewer {
   font-family: "RighteousRegular";
   font-size: 1.5rem;
   background-color: transparent;
+  position: relative;
+  display: inline-block;
+}
+.menu-button::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--navbar-color);
+  bottom: 0;
+  left: 0;
+  transition: width 0.6s ease;
 }
 
+.menu-button:hover::before {
+  width: 100%;
+}
 .menu-button:hover {
-  text-decoration-line: underline;
   cursor: pointer;
 }
-
 .menu-button:active {
   background-color: #505050;
 }
 
 .framework-icon {
   width: auto;
-  height: 90px;
+  height: 8vh;
 }
 
 .framework-icon-name {
@@ -103,6 +119,9 @@ model-viewer {
 }
 .vertical-overflow {
   overflow: hidden;
+}
+.horizontal-line {
+  border-top: 2px solid #ffffff;
 }
 p {
   color:white;
@@ -112,6 +131,7 @@ p {
 h1 {
   color: var(--accent-color);
   font-family: "RighteousRegular";
+  text-align: center;
 }
 
 h2 {
@@ -133,3 +153,23 @@ h5 {
   font-family: "Oxanium-medium";
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 0.5vw;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, .8);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 1);
+}

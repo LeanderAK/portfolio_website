@@ -28,13 +28,13 @@ function App() {
   const handleResumeRef = () => {
     resumeRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
-  const [navbarColor, setNavbarColor] = useState("#000000");
+  const [navbarColor, setNavbarColor] = useState("#2a214b");
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY; // => scroll position
     console.log(scrollPosition, window.innerHeight);
     if(scrollPosition > 0.9 * window.innerHeight)  {
-      setNavbarColor("#ffffff")
+      setNavbarColor("#afa4da")
     } else {
       setNavbarColor("#000000")
     }
@@ -99,85 +99,15 @@ function App() {
         </Row>
       </Container>
       <Container fluid className="background-2" style={{height:"100%"}}>
-        <div >
-          <h1 className='mt-5' data-aos="fade-up" data-aos-delay="0"> HELLO ASDASD</h1>
-          <p className='pl-5 pr-5' data-aos="fade-up" data-aos-delay="0"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-        </div>
-        <Row className='pt-5'>       
-          <div className='col-11'>
-            <Row className='justify-content-center '>
-              <div data-aos="fade-up" data-aos-delay="0">
-                <ProjectCard 
-                  src="./images/desertImage.png"
-                  title="Divae" 
-                  subtitle="Bookclub App"
-                  content="Card text blaa bla " 
-                  modalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." 
-                />
-              </div>
-              <div data-aos="fade-up" data-aos-delay="100">
-                <ProjectCard 
-                  src="./images/blubble.png"
-                  title="Blubble" 
-                  subtitle="Cross platform app"
-                  content="
-                    Blubble is a book club application that is designed to help book lovers structure and plan their 
-                    discussions like never before. With Blubble, we have created an innovative tool that offers a wide 
-                    range of features to make book club discussions more engaging, organized, and productive.
-                    Blubble was created as a student project under the supervision of diva-e over the course of the 5th 
-                    semester of my bachelor studies.
-                  " 
-                  contentLink="https://showtime.f4.htw-berlin.de/ws22/bachelor/b6-book-reading-club-applikation/"
-                  />
-              </div>
-              <div data-aos="fade-up" data-aos-delay="200">
-                <ProjectCard 
-                  src="./images/desertImage.png"
-                  title="Exhebition Render" 
-                  subtitle="Blender rendering Practice"
-                  content="
-                    Blubble is a book club application that is designed to help book lovers structure and plan their 
-                    discussions like never before. With Blubble, we have created an innovative tool that offers a wide 
-                    range of features to make book club discussions more engaging, organized, and productive.
-                    Blubble was created as a student project under the supervision of diva-e over the course of the 5th 
-                    semester of my bachelor studies.
-                  " 
-                  modalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." 
-                />
-              </div>
-              <div data-aos="fade-up" data-aos-delay="300">
-                <ProjectCard 
-                  src="./images/desertImage.png"
-                  title="Simple Shrine Pack" 
-                  subtitle="Unity Asset store pack"
-                  content="
-                    Blubble is a book club application that is designed to help book lovers structure and plan their 
-                    discussions like never before. With Blubble, we have created an innovative tool that offers a wide 
-                    range of features to make book club discussions more engaging, organized, and productive.
-                    Blubble was created as a student project under the supervision of diva-e over the course of the 5th 
-                    semester of my bachelor studies.
-                  " 
-                  modalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." 
-                />
-              </div>
-            </Row>
-          </div>
-          <div className='col-1 col-md-auto'>
-            <span className='font-righteous-subtitle verticaltext' ref={projectRef}>PROJECTS</span>
-          </div>
-        </Row>
-        <Row className='pt-5'>
-          <div className='col-1 vertical-overflow'>
-            <h1 className='font-righteous-subtitle verticaltext' ref={resumeRef}>RESUME</h1>
-          </div>
-          <div className='col-11'>
-            <Timeline />
-          </div>
-
-        </Row>
-        <Row className='pt-5'>
-          <div className='col-11'>
-              <Col>
+        <Row>
+          <Col className="background-color-left">
+            <div >
+              <h1 className='mt-5' data-aos="fade-up" data-aos-delay="0"> HELLO!</h1>
+                <p className='pl-5 pr-5 text-left' data-aos="fade-up" data-aos-delay="0">
+                  Im a Developer and this is my Portfolio.    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+                </p>
+            </div>
+            <Col>
                 <Row className='justify-content-center'> 
                   <span className='verticaltext mt-3' style={{fontSize: "20px"}} data-aos="fade-up"> FRONTEND</span>
                   <FrameworkIcon name="React" src="./icons/react_icon.png" popup_delay="0"/>
@@ -207,6 +137,42 @@ function App() {
                   <FrameworkIcon name="Unity" src="./icons/unity_icon.png" popup_delay="50"/>
                 </Row>
               </Col>
+          </Col>
+          <Col className="background-color-right" ref={projectRef}>
+                <ProjectCard 
+                  src="./images/blubble.png"
+                  title="BLUBBLE" 
+                  subtitle="Intern and working student"
+                  content="Here I have been working on a multitude of projects, mostly focused on frontend web-development as well as backend architecture for web services." 
+                  modalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+                  isLeft = "True"
+                  />  
+                <hr className='horizontal-line mt-4 mb-4'/>
+                <ProjectCard 
+                  src="./images/blubble.png"
+                  title="BLUBBLE" 
+                  subtitle="Intern and working student"
+                  content="Here I have been working on a multitude of projects, mostly focused on frontend web-development as well as backend architecture for web services." 
+                  modalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+                  isLeft = "False"
+                />   
+          </Col>
+        </Row>
+
+
+
+        <Row className='pt-5'>
+          <div className='col-1 vertical-overflow'>
+            <h1 className='font-righteous-subtitle verticaltext' ref={resumeRef}>RESUME</h1>
+          </div>
+          <div className='col-11'>
+            <Timeline />
+          </div>
+
+        </Row>
+        <Row className='pt-5'>
+          <div className='col-11'>
+              
           </div>
           <div className='col-1 vertical-overflow'>
             <h1 className='font-righteous-subtitle verticaltext' ref={frameworksRef}>PROFICIENCIES</h1>

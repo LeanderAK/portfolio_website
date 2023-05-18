@@ -2,7 +2,7 @@
     text-align: left;
     width: 80%;
     word-wrap: break-word;
-    background: linear-gradient(to bottom, var(--dark-color2), var(--dark-color1));
+    background: var(--card-color);
     padding: 1rem;
     border-radius: 1rem;
     margin-bottom: 1rem;

@@ -10,23 +10,41 @@ function ProjectCard(props) {
 
     return (
       <div>
-        <a onClick={handleShow}>
-          <Card className='m-3 project-card col-auto' >
-            <div style={{height:'200px;'}}>
-                  <Card.Img className='project-card-image rounded mx-auto' variant="top" src={props.src}/>
-            </div>
-            <Card.Body className='project-card-body'>
-              <Card.Title className="text-left"> 
-                <h5>{props.subtitle} </h5>
-                <h2>{props.title}</h2> 
-              </Card.Title>
-              <Card.Text className="text-left"> 
-                <p className=''>{props.content}</p>
-              </Card.Text>
-              
-            </Card.Body>
+        <Row className='justify-content-center'>
+          <Card className='project-card' data-aos="fade-up" data-aos-delay="0">
+            <a onClick={handleShow}>
+              <Card.Body className='project-card-body p-2'>
+                  <Row>
+                    {props.isLeft === "True" ? ( <Row>
+                        <Col sm={1} className="p-1">
+                          <span className='verticaltext project-card-title'>{props.title} </span>
+                        </Col>
+                        <Col sm={7} className="p-1">
+                          <Card.Img src={props.src} alt="Image" data-aos="fade-up" data-aos-delay="100"/>                 
+                        </Col>
+                        <Col sm={4} className="p-1 ">
+                          <span className='project-card-text'>{props.content}</span>   
+                        </Col>
+                      </Row>
+                      )
+                      : 
+                      <Row>
+                        <Col sm={4} className="p-1">
+                          <span className='project-card-text'>{props.content}</span>   
+                        </Col>
+                        <Col sm={7} className="p-1">
+                          <Card.Img src={props.src} alt="Image" data-aos="fade-up" data-aos-delay="100"/>                 
+                        </Col>
+                        <Col sm={1} className="p-1">
+                          <span className='verticaltext project-card-title'>{props.title} </span>
+                        </Col>
+                      </Row>
+                    }
+                  </Row>
+              </Card.Body>
+            </a>
           </Card>
-        </a>
+        </Row>
         
         <Modal show={showModal} onHide={handleClose} centered>
           <Modal.Body>
