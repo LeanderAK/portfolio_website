@@ -1,15 +1,116 @@
-.timeline-item {
-    text-align: left;
-    width: 80%;
-    word-wrap: break-word;
-    background: var(--card-color);
-    padding: 1rem;
-    border-radius: 1rem;
-    margin-bottom: 1rem;
-    border-right: solid 2px var(--dark-color2);
-    border-bottom: solid 2px var(--dark-color2);
-    box-shadow: 0px 0px 15px rgba(167, 153, 107, 0.4);
+.main-timeline {
+    position: relative;
 }
-.timeline-secondary-item {
-    margin-left: 15%;
+.main-timeline::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    border-radius: 5px;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    box-shadow: 2px 2px gray;
 }
+.timeline-type-text {
+    font-family: "Oxanium-medium";   
+    color: white; 
+    font-style: italic;
+}
+.timeline {
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    
+}
+.timeline-shadow {
+    box-shadow: rgba(50, 50, 93, 0.5) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.timeline-gap-close {
+    margin-top: -20%;
+}
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -13px;
+    top: 15px;
+    background-color: #ffe194;
+    border: 5px solid #ffe194;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 2px 2px gray;
+}
+
+.timeline-left {
+    padding: 0px 40px 20px 0px;
+    left: 0;
+}
+  
+.timeline-right {
+    padding: 0px 0px 20px 40px;
+    left: 50%;
+}
+  
+.timeline-left::before {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--content-background-right);
+}
+  
+.timeline-right::before {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--content-background-left) transparent transparent;
+}
+  
+.timeline-right::after {
+    left: -12px;
+}
+  
+@media screen and (max-width: 600px) {
+    .main-timeline::after {
+      left: 31px;
+}
+  
+    .timeline {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+  
+    .timeline::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+  
+    .timeline-left::after,
+    .timeline-right::after {
+      left: 18px;
+    }
+  
+    .timeline-left::before {
+      right: auto;
+    }
+
+    .timeline-right {
+      left: 0%;
+    }
+    .timeline-gap-close {
+        margin-top: inherit;
+    }
+  }
