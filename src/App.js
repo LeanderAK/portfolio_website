@@ -29,15 +29,15 @@ function App() {
   const handleResumeRef = () => {
     resumeRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
-  const [navbarColor, setNavbarColor] = useState("#FFFFFF");
+  const [isVisible, setIsVisible] = useState(true);
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY; // => scroll position
-    console.log(scrollPosition, window.innerHeight);
+
     if(scrollPosition > 0.95 * window.innerHeight)  {
-      setNavbarColor("#FFFFFF")
+      setIsVisible(true);
     } else {
-      setNavbarColor("#FFFFFF")
+      setIsVisible(false);
     }
   }
   useEffect(() => {
@@ -51,7 +51,7 @@ function App() {
 
   return (
     
-    <div className="App" data-spy="scroll" data-target="#navbar" style={{"--navbar-color" : navbarColor}}>
+    <div className="App" data-spy="scroll" data-target="#navbar">
       <script>
         AOS.init();
       </script>
@@ -61,6 +61,9 @@ function App() {
             <a className='mr-3' onClick={handleProjectRef}> <span className='menu-button navbar-color pl-2 pr-2'>PROJECTS</span> </a>
             <a className='' onClick={handleResumeRef}> <span className='menu-button navbar-color pl-2 pr-2'>CV</span> </a>
             <a className=' ml-3' onClick={handleFrameworksRef}> <span className='menu-button navbar-color pl-2 pr-2'>FRAMEWORKS</span> </a>
+          </Col>
+          <Col className='text-center'>
+            <span className='navbar-title'> LEANDER KAMMERMEIER</span>
           </Col>
           <Col  className="text-right">
             <a href="https://github.com/LeanderAK" target='blank'> 

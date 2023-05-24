@@ -2,8 +2,8 @@
 :root {
   --card-color: #494949;
 
-  --content-background-left: #1b9c85;
-  --content-background-right: #4c4c6d;
+  --content-background-left: #554b40;
+  --content-background-right: #3e5239;
 
   --top-color: #b6d5c7;
   /*e8f6ef */
@@ -113,10 +113,20 @@ model-viewer {
   color: var(--navbar-color);
   transition: color 0.5s ease-in-out;
 }
+.navbar-title {
+  font-family: "RighteousRegular";
+  font-size: 1.5rem;
+  text-shadow: 2px 2px grey;
+  color: var(--accent-color);
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+.navbar-title.fade-out {
+  opacity: 0;
+}
 .menu-button {
   font-family: "RighteousRegular";
   font-size: 1.5rem;
-  background-color: transparent;
   position: relative;
   display: inline-block;
   text-shadow: 2px 2px grey;
