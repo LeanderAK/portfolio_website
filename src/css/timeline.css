@@ -5,7 +5,7 @@
     content: "";
     position: absolute;
     width: 6px;
-    background-color: white;
+    background-color: var(--line-color);
     border-radius: 5px;
     top: 0;
     bottom: 0;
@@ -15,7 +15,7 @@
 }
 .timeline-type-text {
     font-family: "Oxanium-medium";   
-    color: white; 
+    color: var(--line-color); 
     font-style: italic;
 }
 .timeline {
@@ -60,7 +60,7 @@
     top: 18px;
     z-index: 1;
     right: 30px;
-    border: medium solid white;
+    border: medium solid var(--line-color);
     border-width: 10px 0 10px 10px;
     border-color: transparent transparent transparent var(--content-background-right);
 }
@@ -71,7 +71,7 @@
     top: 18px;
     z-index: 1;
     left: 30px;
-    border: medium solid white;
+    border: medium solid var(--line-color);
     border-width: 10px 10px 10px 0;
     border-color: transparent var(--content-background-left) transparent transparent;
 }
@@ -93,9 +93,9 @@
   
     .timeline::before {
       left: 60px;
-      border: medium solid white;
+      border: medium solid var(--line-color);
       border-width: 10px 10px 10px 0;
-      border-color: transparent white transparent transparent;
+      border-color: transparent var(--line-color) transparent transparent;
     }
   
     .timeline-left::after,

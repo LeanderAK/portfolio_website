@@ -9,7 +9,10 @@
   /*e8f6ef */
   --accent-color: #ffe194;
   --navbar-color: #000000;
+
+  --line-color: #e1dccd;
 }
+
 body {
   max-width: 100%;
   overflow: overlay;
@@ -96,8 +99,8 @@ model-viewer {
   border-bottom-left-radius: 20px; */
 }
 .description-text {
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 3%;
+  padding-right: 3%;
   hyphens: auto; 
   display: inline-block;
 	text-align: justify;
@@ -151,18 +154,6 @@ model-viewer {
 .menu-button:active {
   background-color: #505050;
 }
-
-.framework-icon {
-  width: 60px;
-  aspect-ratio: 2/2;
-  object-fit: contain;
-}
-
-.framework-icon-name {
-  color: white;
-  text-shadow: 2px 2px gray;
-
-}
 .vertical-overflow {
   overflow: hidden;
 }
@@ -170,11 +161,11 @@ model-viewer {
   margin-left: 2%;
   margin-right: 2%;
   border-radius: 5px;
-  border-top: 3px solid white;
+  border-top: 3px solid var(--line-color);
   box-shadow: 2px 2px gray;
 }
 p {
-  color:white;
+  color: white;
   font-family: "Oxanium-light";
 }
 
@@ -240,4 +231,7 @@ footer {
 	100% {
 		background-position: 0% 50%;
 	}
+}
+fieldset {
+  border: 1px solid var(--line-color);
 }
