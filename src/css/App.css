@@ -16,11 +16,12 @@
 
   --line-color: #e1dccd;
 }
-
-body {
+.app {
   max-width: 100%;
+  overflow-x: hidden;
+}
+body {
   overflow: overlay;
-  overflow-x: hidden ;
 }
 .font-righteous-title {
   font-family: "RighteousRegular";

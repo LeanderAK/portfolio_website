@@ -51,7 +51,7 @@ function App() {
 
   return (
 
-    <div className="App" data-spy="scroll" data-target="#navbar">
+    <div className="app" data-spy="scroll" data-target="#navbar">
       <script>
         AOS.init();
       </script>
@@ -77,7 +77,7 @@ function App() {
       </Navbar>
       <Container fluid className='background-1 p-0' id="container1">
         <Row>
-          <Col className='d-flex align-items-center'>
+          <Col className='d-flex align-items-center p-0'>
             <div className='ml-auto' style={{ width: "45%" }}>
               <span className='font-righteous-title verticaltext titletext'>
                 LEANDER
@@ -87,7 +87,7 @@ function App() {
               </span>
             </div>
           </Col>
-          <Col>
+          <Col className="p-0">
             <div className='ml-auto' style={{ width: "95%" }}>
               <model-viewer
                 src="./laura.glb"
@@ -114,6 +114,7 @@ function App() {
                   Welcome to my Portfolio! I am a Developer. Below you can see the wide variety of Frameworks, Languages and Software I have gotten proficient in through the course of my Bachelors Degree and my Work. I have been able to experience real world full stack development where "GREAT" Design is as important as a robust backend structure which is a REALLY IMPORTANT addition to technical knowledge from university courses."
                 </p>
             </div>
+            <div className='brace top'></div>
             <div className='text-center justify-content-center'>
               <Row>
                 <Col>

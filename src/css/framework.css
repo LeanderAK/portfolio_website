@@ -5,8 +5,8 @@
     object-fit: contain;
 }  
 .framework-icon-name {
-    color: var(--line-color);
-    text-shadow: 2px 2px gray;
+    color: white;
+    font-family: "Oxanium-light";
 }
 
 .frameworks {
@@ -28,9 +28,9 @@
     height: 20px;
     background-blend-mode: difference;
     background-color: #3e5239;
-    color: var(--line-color);
+    color: white;
     font-family: "Oxanium-light";
-
+    width: fit-content;
 }
 
 .frameworks-content {
