@@ -1,33 +1,32 @@
 /* #b6d5c7, #8ac3ae, #90a4b8, #e6ccaf*/
-.web-frameworks {
-    border-radius: 15px;
+.framework-icon {
+    width: 60px;
+    aspect-ratio: 2/2;
+    object-fit: contain;
+}
+.framework-icon-name {
+    color: white;
+    
+}
+.web-frameworks, .backend-frameworks, .language-frameworks, .software-frameworks {
+    border-radius: 5px;
     width: fit-content;
     flex-direction: row;
-    display: flex;;
+    display: flex;
+}
+.web-frameworks {
     border: 4px solid #a9b4f0;
     background-color: rgba(0, 0, 0, 0.2);
 }
 .backend-frameworks {
-    border-radius: 15px;
-    width: fit-content;
-    flex-direction: row;
-    display: flex;
     border: 4px solid #71f6c6;
     background-color: rgba(0, 0, 0, 0.2);
 }
 .language-frameworks {
-    border-radius: 15px;
-    width: fit-content;
-    flex-direction: row;
-    display: flex;
     border: 4px solid #adffaa;
     background-color: rgba(0, 0, 0, 0.2);
 }
 .software-frameworks {
-    border-radius: 15px;
-    width: fit-content;
-    flex-direction: row;
-    display: flex;
     border: 4px solid #ffd6a7;
     background-color: rgba(0, 0, 0, 0.2);
 }

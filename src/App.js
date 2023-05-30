@@ -34,7 +34,7 @@ function App() {
   const handleScroll = () => {
     const scrollPosition = window.scrollY; // => scroll position
 
-    if(scrollPosition > 0.95 * window.innerHeight)  {
+    if(scrollPosition > 1 * window.innerHeight)  {
       setIsVisible(true);
     } else {
       setIsVisible(false);
@@ -62,8 +62,8 @@ function App() {
             <a className='' onClick={handleResumeRef}> <span className='menu-button navbar-color pl-2 pr-2'>CV</span> </a>
             <a className=' ml-3' onClick={handleFrameworksRef}> <span className='menu-button navbar-color pl-2 pr-2'>FRAMEWORKS</span> </a>
           </Col>
-          <Col className='text-center'>
-            <span className='navbar-title'> LEANDER KAMMERMEIER</span>
+          <Col className={`fade-object ${isVisible ? 'text-center fade-out' : 'text-center'}`}>
+            <span className='navbar-title' > LEANDER KAMMERMEIER</span>
           </Col>
           <Col  className="text-right">
             <a href="https://github.com/LeanderAK" target='blank'> 
@@ -75,7 +75,7 @@ function App() {
           </Col>
         </Row>
       </Navbar>
-      <Container fluid className='background-1' id="container1">
+      <Container fluid className='background-1 p-0' id="container1">
         <Row>
           <Col className='d-flex align-items-center'>
             <div className='ml-auto' style={{ width: "45%" }}>
@@ -101,7 +101,7 @@ function App() {
           </Col>
         </Row>
       </Container>
-      <Container fluid className="background-2" style={{height:"100%"}}>
+      <Container fluid className="background-2 p-0">
         <Row className='justify-content-between'>
           <h1 className='font-righteous-subtitle ml-4' data-aos="fade-right">PROFICIECIES</h1>
           <h1 className='font-righteous-subtitle mr-4' data-aos="fade-left" data-aos-delay="50">PROJECTS</h1>
@@ -109,7 +109,7 @@ function App() {
         <Row>
           <Col className="background-color-left left-content-container mr-4" data-aos="fade-up-right" data-aos-delay="0">
             <div >
-              <h1 className='mt-5'> HELLO!</h1>
+              <h2 className='mt-5 text-center'> HELLO!</h2>
                 <p className='description-text'>
                   Welcome to my Portfolio! I am a Developer. Below you can see the wide variety of Frameworks, Languages and Software I have gotten proficient in through the course of my Bachelors Degree and my Work. I have been able to experience real world full stack development where "GREAT" Design is as important as a robust backend structure which is a REALLY IMPORTANT addition to technical knowledge from university courses."
                 </p>
@@ -222,7 +222,8 @@ function App() {
         </Row>
 
 
-
+      </Container>
+      <Container fluid className='background-3 p-0'>
         <Col className='pt-5'>
           <h1 className='font-righteous-subtitle' ref={resumeRef}>CV</h1>
             <Timeline />

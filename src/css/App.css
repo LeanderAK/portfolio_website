@@ -8,20 +8,21 @@
   --top-color: #b6d5c7;
   /*e8f6ef */
   --accent-color: #ffe194;
-  --navbar-color: #000000;
+  --navbar-color: #fcfcfc;
+  --shadow-color: #933737;
+
+  --background-color-1: #664f36;
+  --background-color-2: #8d7e5e;
 }
 body {
   max-width: 100%;
   overflow: overlay;
-  background: linear-gradient(-90deg, #b6d5c7, #8ac3ae, #90a4b8, #e6ccaf);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+  overflow-x: hidden ;
 }
 .font-righteous-title {
   font-family: "RighteousRegular";
   font-size: 4rem;
 }
-
 .font-righteous {
   font-family: "RighteousRegular";
   font-size: 1rem;
@@ -29,7 +30,6 @@ body {
 
 .font-righteous-subtitle {
   font-family: "RighteousRegular";
-  font-size: 3.6rem;
   margin-top: 1rem;
   }
 
@@ -43,36 +43,33 @@ model-viewer {
   padding-bottom: 1rem;
   color: var(--accent-color);
   font-family: "RighteousRegular";
-  text-shadow: 2px 2px grey;
+  text-shadow: 2px 2px var(--shadow-color);
 }
 .horizontal-text {
   color: var(--accent-color);
   font-family: "RighteousRegular";
-  text-shadow: 2px 2px grey;
+  text-shadow: 2px 2px var(--shadow-color);
 }
 .titletext {
   height: 100vh;
   color: var(--accent-color);
   text-align: center;
-  text-shadow: 2px 2px grey;
+  text-shadow: 2px 2px var(--shadow-color);
+}
+.background-1, .background-2, .background-3 {
+  width: 100vw;
 }
 .background-1 {
-  position: relative;
   height: 100vh;
-  width: 100vw;
+  background: radial-gradient(var(--background-color-2),var(--background-color-1));
 }
-
 .background-2 {
-  overflow: hidden;
-  width: 100vw;
-  position: relative;
+  background: radial-gradient(var(--background-color-2),var(--background-color-1));
 }
 .background-3 {
-  width: 100vw;
-  position: relative;
-  height: 100vh;
-  background: var(--top-color);
+  background: radial-gradient(var(--background-color-2),var(--background-color-1));
 }
+
 .background-color-left {
   background: var(--content-background-left);
   border-top-right-radius: 0.25rem;
@@ -85,13 +82,13 @@ model-viewer {
 }
 .left-content-container {
   border-right: var(--top-color);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(50, 50, 93, 0.5) 0px 25px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   /* border-top-right-radius: 20px;
   border-bottom-right-radius: 20px; */
 }
 .right-content-container { 
   border-left: var(--top-color);
-  box-shadow: rgba(50, 50, 93, 0.5) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(50, 50, 93, 0.5) 0px 25px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   /* border-top-left-radius: 20px;
   border-bottom-left-radius: 20px; */
 }
@@ -116,20 +113,22 @@ model-viewer {
 .navbar-title {
   font-family: "RighteousRegular";
   font-size: 1.5rem;
-  text-shadow: 2px 2px grey;
+  text-shadow: 2px 2px var(--shadow-color);
   color: var(--accent-color);
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
 }
-.navbar-title.fade-out {
-  opacity: 0;
+.fade-object {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-out;
+}
+.fade-out {
+  transform: translateY(0);
 }
 .menu-button {
   font-family: "RighteousRegular";
   font-size: 1.5rem;
   position: relative;
   display: inline-block;
-  text-shadow: 2px 2px grey;
+  text-shadow: 2px 2px gray;
 }
 .menu-button::before {
   content: '';
@@ -151,18 +150,6 @@ model-viewer {
 .menu-button:active {
   background-color: #505050;
 }
-
-.framework-icon {
-  width: 60px;
-  aspect-ratio: 2/2;
-  object-fit: contain;
-}
-
-.framework-icon-name {
-  color: white;
-  text-shadow: 2px 2px gray;
-
-}
 .vertical-overflow {
   overflow: hidden;
 }
@@ -171,7 +158,7 @@ model-viewer {
   margin-right: 2%;
   border-radius: 5px;
   border-top: 3px solid white;
-  box-shadow: 2px 2px gray;
+  box-shadow: 2px 2px var(--shadow-color);
 }
 p {
   color:white;
@@ -182,30 +169,13 @@ h1 {
   color: var(--accent-color);
   font-family: "RighteousRegular";
   text-align: center;
-  text-shadow: 2px 2px grey;
+  font-size: 3.6rem;
+  text-shadow: 2px 2px var(--shadow-color);
 }
 
-h2 {
+h2, h3, h4, h5 {
   color: var(--accent-color);
   font-family: "RighteousRegular";
-  text-shadow: 2px 2px grey;
-}
-
-h3 {
-  color: var(--accent-color);
-  font-family: "RighteousRegular";
-  text-shadow: 2px 2px grey;
-}
-h4 {
-  color: var(--accent-color);
-  font-family: "Oxanium-medium";
-  text-shadow: 2px 2px grey;
-}
-
-h5 {
-  color: var(--accent-color);
-  font-family: "Oxanium-medium";
-  text-shadow: 2px 2px grey;
 }
 footer {
   background-color: #4c4c6d;
