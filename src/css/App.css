@@ -13,7 +13,10 @@
 
   --background-color-1: #664f36;
   --background-color-2: #8d7e5e;
+
+  --line-color: #e1dccd;
 }
+
 body {
   max-width: 100%;
   overflow: overlay;
@@ -93,8 +96,8 @@ model-viewer {
   border-bottom-left-radius: 20px; */
 }
 .description-text {
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 3%;
+  padding-right: 3%;
   hyphens: auto; 
   display: inline-block;
 	text-align: justify;
@@ -157,11 +160,11 @@ model-viewer {
   margin-left: 2%;
   margin-right: 2%;
   border-radius: 5px;
-  border-top: 3px solid white;
-  box-shadow: 2px 2px var(--shadow-color);
+  border-top: 3px solid var(--line-color);
+  box-shadow: 2px 2px gray;
 }
 p {
-  color:white;
+  color: white;
   font-family: "Oxanium-light";
 }
 
@@ -210,4 +213,7 @@ footer {
 	100% {
 		background-position: 0% 50%;
 	}
+}
+fieldset {
+  border: 1px solid var(--line-color);
 }

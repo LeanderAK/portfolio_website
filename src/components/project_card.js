@@ -12,9 +12,9 @@ function ProjectCard(props) {
     return (
       <div>
         <Row className='justify-content-center'>
-          <Card className='project-card'>
+          <Card className='project-card '>
             <a onClick={handleShow}>
-              <Card.Body className='project-card-body'>  
+              <Card.Body className='project-card-body pt-0'>  
                   {props.isLeft === "True" ? ( 
                     <div>
                       <Row >
