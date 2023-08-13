@@ -2,8 +2,8 @@
 :root {
   --card-color: #494949;
 
-  --content-background-left: #554b40;
-  --content-background-right: #3e5239;
+  --content-background-left: #5e5e5e;
+  --content-background-right: #5e5e5e;
 
   --top-color: #b6d5c7;
   /*e8f6ef */
@@ -11,8 +11,8 @@
   --navbar-color: #fcfcfc;
   --shadow-color: #933737;
 
-  --background-color-1: #664f36;
-  --background-color-2: #8d7e5e;
+  --background-color-1: #92bcc9;
+  --background-color-2: #afafaf;
 
   --line-color: #e1dccd;
 }
@@ -76,22 +76,20 @@ model-viewer {
 
 .background-color-left {
   background: var(--content-background-left);
-  border-top-right-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
 }
 .background-color-right {
   background: var(--content-background-right);
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
 }
 .left-content-container {
-  border-right: var(--top-color);
+  margin-left: 8%;
+  margin-right: 4%;
   box-shadow: rgba(50, 50, 93, 0.5) 0px 25px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   /* border-top-right-radius: 20px;
   border-bottom-right-radius: 20px; */
 }
 .right-content-container { 
-  border-left: var(--top-color);
+  margin-right: 8%;
+  margin-left: 4%;
   box-shadow: rgba(50, 50, 93, 0.5) 0px 25px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   /* border-top-left-radius: 20px;
   border-bottom-left-radius: 20px; */

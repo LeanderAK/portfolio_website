@@ -27,7 +27,7 @@
     top: 8px;
     height: 20px;
     background-blend-mode: difference;
-    background-color: #3e5239;
+    background-color: var(--content-background-right);
     color: white;
     font-family: "Oxanium-light";
     width: fit-content;

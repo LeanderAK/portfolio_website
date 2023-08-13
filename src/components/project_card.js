@@ -20,6 +20,7 @@ function ProjectCard(props) {
                       <Row >
                         <Col className="p-0">
                           <h3> {props.title}</h3>
+                          <h5>{props.subtitle}</h5>
                           <Row className='project-card-content'>
                             <Col sm={8} className='p-0'>
                               <Card.Img className='project-card-image img-fluid' src={props.src} alt="Image" />  
@@ -38,6 +39,7 @@ function ProjectCard(props) {
                       <Row >
                         <Col className="p-0">
                           <h3 className='text-right'> {props.title}</h3>
+                          <h5 className='text-right'> {props.subtitle}</h5>
                           <Row className='project-card-content'>
                             <Col sm={4}>
                               <span className='project-card-text'>{props.content}</span>   
