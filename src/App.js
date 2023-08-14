@@ -1,7 +1,7 @@
 import './css/App.css';
 import './css/framework.css'
 import './css/timeline.css'
-import './css/project_card.css'
+import './css/project_carousel.css'
 
 import React, { useState, useEffect, useRef } from 'react';
 import AOS from 'aos';
@@ -10,7 +10,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import FrameworkIcon from './components/framework_icon';
-import ProjectCard from './components/project_card';
+import ProjectCarousel from './components/project_carousel';
 import Timeline from './components/timeline'
 import { Navbar, Button, Card } from 'react-bootstrap';
 import { Github, Linkedin } from 'react-bootstrap-icons';
@@ -59,37 +59,29 @@ function App() {
       <Navbar className={`fade-object ${isVisible ? 'text-center fade-out' : 'text-center'}`} fixed="top" id='navbar'>
         <Row className='justify-content-between' style={{ width: '100%' }}>
           <Col className="text-left">
-            <a className='mr-3' onClick={handleProjectRef}> <span className='menu-button navbar-color pl-2 pr-2'>PROJECTS</span> </a>
-            <a className='' onClick={handleResumeRef}> <span className='menu-button navbar-color pl-2 pr-2'>CV</span> </a>
-            <a className=' ml-3' onClick={handleFrameworksRef}> <span className='menu-button navbar-color pl-2 pr-2'>FRAMEWORKS</span> </a>
+            <a className='me-3' onClick={handleProjectRef}> <span className='menu-button navbar-color ps-2 pe-2'>PROJECTS</span> </a>
+            <a className='' onClick={handleResumeRef}> <span className='menu-button navbar-color ps-2 pe-2'>CV</span> </a>
+            <a className=' ms-3' onClick={handleFrameworksRef}> <span className='menu-button navbar-color ps-2 pe-2'>FRAMEWORKS</span> </a>
           </Col>
           <Col className="text-center">
             <span className='navbar-title' > LEANDER KAMMERMEIER</span>
           </Col>
           <Col className="text-right">
             <a href="https://github.com/LeanderAK" target='blank'>
-              <Github className="mt-1 ml-4 navbar-color" size={50} />
+              <Github className="mt-1 ms-4 navbar-color" size={50} />
             </a>
             <a href="https://www.linkedin.com/in/leander-kammermeier-b0b844212/" target='blank'>
-              <Linkedin className="mt-1 ml-4 navbar-color" size={50} />
+              <Linkedin className="mt-1 ms-4 navbar-color" size={50} />
             </a>
           </Col>
         </Row>
       </Navbar>
       <Container fluid className='background-1 p-0' id="container1">
-        <Row>
-          <Col className='d-flex align-items-center p-0'>
-            <div className='ml-auto' style={{ width: "45%" }}>
-              <span className='font-righteous-title verticaltext titletext'>
-                LEANDER
-              </span>
-              <span className='font-righteous-title verticaltext titletext'>
-                KAMMERMEIER
-              </span>
-            </div>
-          </Col>
-          <Col className="p-0">
-            <div className='ml-auto' style={{ width: "95%" }}>
+          <Col className="p-0 text-center">
+            <Row>
+              <h1 className='titletext pt-4'>LEANDER</h1>
+            </Row>
+            <Row>
               <model-viewer
                 src="./laura.glb"
                 camera-controls
@@ -98,13 +90,30 @@ function App() {
                 exposure="1"
               >
               </model-viewer>
-            </div>
+            </Row>
+            <Row>
+                <h1 className='titletext titletext-bottom'>KAMMERMEIER</h1>
+                <div className='d-flex flex-row justify-content-center'>
+                  <a href="https://github.com/LeanderAK" target='blank'>
+                    <Github className="mt-1 ms-2 me-2 navbar-color" size={75} />
+                  </a>
+                  <a href="https://www.linkedin.com/in/leander-kammermeier-b0b844212/" target='blank'>
+                    <Linkedin className="mt-1 ms-2 me-2 navbar-color" size={75} />
+                  </a>
+                </div>
+                <h1>V</h1>
+            </Row>
           </Col>
-        </Row>
+      </Container>
+      <Container fluid className='background-3 p-0'>
+        <Col className='pt-5 text-center'>
+          <h1 className='font-righteous-subtitle' ref={projectRef}>Projects</h1>
+          <ProjectCarousel />
+        </Col>
       </Container>
       <Container fluid className="background-2 p-0">
         <Row>
-          <Col className='p-0'>
+          <Col xs={6} className='p-0 text-center'>
             <h1 className='font-righteous-subtitle' data-aos="fade-right">PROFICIENCIES</h1>
             <Card className='background-color-left left-content-container'>
                 <Card.Body className='p-4'>
@@ -152,152 +161,11 @@ function App() {
                 </Card.Body>
             </Card>
           </Col>
-          <Col className='p-0'>
-            <h1 className='font-righteous-subtitle' data-aos="fade-left" data-aos-delay="50">PROJECTS</h1>
-            <Card className='background-color-right right-content-container'>
-                <Card.Body className='p-4'>
-                  <div className='mt-5'/>
-                    <ProjectCard
-                      src="./images/blubble.png"
-                      title="BACHELOR-THESIS"
-                      subtitle="Visualization and analysis of DNS-, Shodan-, and Lighthouse-Datasets to assess the security of business's domains."
-                      content="Here I have been working on a multitude of projects, mostly focused on frontend web-development as well as backend architecture for web services."
-                      modalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
-                      frameworks={["ionic_icon", "firebase_icon", "express_icon", "docker_icon"]}
-                      framework_icons={[<Row className='mt-2 justify-content-end'>
-                        <div className='frameworks-container mr-2'>
-                          <div className='frameworks-title'>Frontend</div>
-                          <div className='frameworks'>
-                            <div className='frameworks-content'>
-                              <FrameworkIcon width="30px" classes="mr-2" src={`icons/ionic_icon.png`}/>
-                              <FrameworkIcon width="30px" classes="mr-2" src={`icons/react_icon.png`} />
-                              <FrameworkIcon width="30px" src={`icons/firebase_icon.png`} />
-                            </div>
-                          </div>
-                        </div>
-                        <div className='frameworks-container'>
-                          <div className='frameworks-title'>Backend</div>
-                          <div className='frameworks'>
-                            <div className='frameworks-content'>
-                              <FrameworkIcon width="30px" classes="mr-2" src={`icons/express_icon.png`} />
-                              <FrameworkIcon width="30px" src={`icons/docker_icon.png`} />
-                            </div>
-                          </div>
-                        </div>
-                      </Row>
-                      ]}
-                      isLeft="False"
-                    />
-                    <hr className='horizontal-line mt-4 mb-4' />
-                    <ProjectCard
-                      src="./images/blubble.png"
-                      title="BLUBBLE"
-                      subtitle="Student Project"
-                      content="A book reading club app created as a Student Project for diva-e."
-                      modalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
-                      frameworks={["ionic_icon", "firebase_icon", "express_icon", "docker_icon"]}
-                      framework_icons={[<Row className='mt-2'>
-                        <div className='frameworks-container mr-2'>
-                          <div className='frameworks-title'>Frontend</div>
-                          <div className='frameworks'>
-                            <div className='frameworks-content'>
-                              <FrameworkIcon width="30px" classes="mr-2" src={`icons/ionic_icon.png`}/>
-                              <FrameworkIcon width="30px" classes="mr-2" src={`icons/react_icon.png`} />
-                              <FrameworkIcon width="30px" src={`icons/firebase_icon.png`} />
-                            </div>
-                          </div>
-                        </div>
-                        <div className='frameworks-container'>
-                          <div className='frameworks-title'>Backend</div>
-                          <div className='frameworks'>
-                            <div className='frameworks-content'>
-                              <FrameworkIcon width="30px" classes="mr-2" src={`icons/express_icon.png`} />
-                              <FrameworkIcon width="30px" src={`icons/docker_icon.png`} />
-                            </div>
-                          </div>
-                        </div>
-                      </Row>
-                      ]}
-                      isLeft="True"
-                    />
-                    <hr className='horizontal-line mt-4 mb-4' />
-                    <ProjectCard
-                      src="./images/blubble.png"
-                      title="SIMPLE SHRINE ASSET PACK"
-                      subtitle="3D Assets for Unity Asset store"
-                      content="A cheap and easy Unity 3D Asset pack purchasable in the Unity Asset Store"
-                      modalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
-                      isLeft="False"
-                      framework_icons={[<Row className='mt-2 justify-content-end'>
-                        <div className='frameworks-container mr-2'>
-                          <div className='frameworks-title'>Creative</div>
-                          <div className='frameworks'>
-                            <div className='frameworks-content'>
-                              <FrameworkIcon width="30px" classes="mr-2" src={`icons/blender_icon.png`} />
-                              <FrameworkIcon width="30px" src={`icons/unity_icon.png`} />
-                            </div>
-                          </div>
-                        </div>
-                      </Row>
-                      ]}
-                    />
-                    <hr className='horizontal-line mt-4 mb-4' />
-                    <ProjectCard
-                      src="./images/blubble.png"
-                      title="PORTFOLIO WEBSITE"
-                      subtitle="Intern and working student"
-                      content="A cheap and easy Unity 3D Asset pack purchasable in the Unity Asset Store"
-                      modalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
-                      isLeft="True"
-                      framework_icons={[<Row className='mt-2 '>
-                        <div className='frameworks-container mr-2'>
-                          <div className='frameworks-title'>Frontend</div>
-                          <div className='frameworks'>
-                            <div className='frameworks-content'>
-                              <FrameworkIcon width="30px" src={`icons/react_icon.png`} />
-                              <FrameworkIcon width="30px" src={`icons/html_icon.png`} />
-                              <FrameworkIcon width="30px" src={`icons/css_icon.png`} />
-                              <FrameworkIcon width="30px" src={`icons/bootstrap_icon.png`} />
-                            </div>
-                          </div>
-                        </div>
-                        <div className='frameworks-container mr-2'>
-                          <div className='frameworks-title'>Backend</div>
-                          <div className='frameworks'>
-                            <div className='frameworks-content'>
-                              <FrameworkIcon width="30px" src={`icons/js_icon.png`} />
-                            </div>
-                          </div>
-                        </div>
-                      </Row>
-                      ]}
-                    />
-                    <ProjectCard
-                      src="./images/blubble.png"
-                      title="Floating Home VR Render"
-                      subtitle="Floating Home Render"
-                      content="I built this Unity VR Application on top of the renders for us to fully imerse into the houseboat we were designing. This allowed us a much frequenzy of design iterations."
-                      modalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
-                      isLeft="False"
-                      framework_icons={[<Row className='mt-2 justify-content-end'>
-                        <div className='software-frameworks p-1' style={{ "border-width": "2px" }}>
-                          <FrameworkIcon width="30px" src={`icons/blender_icon.png`} />
-                          <FrameworkIcon width="30px" src={`icons/unity_icon.png`} />
-                        </div>
-                      </Row>
-                      ]}
-                  />
-                </Card.Body>
-            </Card>
+          <Col xs={6} className='p-0 text-center'>
+            <h1 className='font-righteous-subtitle' data-aos="fade-left" data-aos-delay="50">CV</h1>
+                <Timeline />
           </Col>
         </Row>
-
-      </Container>
-      <Container fluid className='background-3 p-0'>
-        <Col className='pt-5'>
-          <h1 className='font-righteous-subtitle' ref={resumeRef}>CV</h1>
-          <Timeline />
-        </Col>
       </Container>
       <footer>
         <h3>Leander kammermeier</h3>

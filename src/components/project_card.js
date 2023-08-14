@@ -13,48 +13,19 @@ function ProjectCard(props) {
       <div>
         <Row className='justify-content-center'>
           <Card className='project-card '>
-            <a onClick={handleShow}>
               <Card.Body className='project-card-body pt-0'>  
-                  {props.isLeft === "True" ? ( 
-                    <div>
-                      <Row >
-                        <Col className="p-0">
-                          <h3> {props.title}</h3>
-                          <h5>{props.subtitle}</h5>
-                          <Row className='project-card-content'>
-                            <Col sm={8} className='p-0'>
-                              <Card.Img className='project-card-image img-fluid' src={props.src} alt="Image" />  
-                            </Col>
-                            <Col sm={4}>
-                              <span className='project-card-text'>{props.content}</span>   
-                            </Col>
-                          </Row>
-                          {props.framework_icons}            
-                        </Col>
-                      </Row>
-                    </div>
-                    )
-                    :
-                    <div>
-                      <Row >
-                        <Col className="p-0">
-                          <h3 className='text-right'> {props.title}</h3>
-                          <h5 className='text-right'> {props.subtitle}</h5>
-                          <Row className='project-card-content'>
-                            <Col sm={4}>
-                              <span className='project-card-text'>{props.content}</span>   
-                            </Col>
-                            <Col sm={8} className='p-0'>
-                              <Card.Img className='project-card-image img-fluid' src={props.src} alt="Image" />  
-                            </Col>
-                          </Row>
-                          {props.framework_icons}             
-                        </Col>
-                      </Row>
-                    </div>
-                  }
+                <Row>
+                  <Col className="p-0 me-4">
+                    {props.framework_icons}            
+                    <h3 className='text-start'> {props.title}</h3>
+                    <span className='project-card-text ps-4'>{props.content}</span>   
+                  </Col>
+                  <Col className="p-0 ms-4 text-end">
+                    <h5>{props.subtitle}</h5>
+                    <Card.Img className='project-card-image img-fluid' onClick={handleShow} src={props.src} alt="Image" />  
+                  </Col>
+                </Row> 
               </Card.Body>
-            </a>
           </Card>
         </Row>
         
@@ -67,12 +38,12 @@ function ProjectCard(props) {
                 </div>
               </Row>
               <Row>
-                <h5>{props.subtitle}</h5>
+                <h5 className='h5'>{props.subtitle}</h5>
               </Row>
               <Row>
                 <h2>{props.title}</h2>
                 
-                <a href={props.contentLink} className='ml-3' target='_blank'><ArrowUpRightSquare color="white" size={32}/></a>
+                <a href={props.contentLink} className='ms-3' target='_blank'><ArrowUpRightSquare color="white" size={32}/></a>
               </Row>
               <Row>
                 <p>
